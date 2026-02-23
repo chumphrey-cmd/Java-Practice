@@ -1,5 +1,3 @@
-package practice_projects.investment_for_loop;
-
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
