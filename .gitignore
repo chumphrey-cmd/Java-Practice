@@ -25,3 +25,4 @@ replay_pid*
 
 # IntelliJ configs removal
 .idea/
+.DS_Store
