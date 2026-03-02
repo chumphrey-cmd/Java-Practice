@@ -28,10 +28,16 @@ public class WeatherStation {
 
             tempData[i] = inputTemp;
 
-            if (tempData[i] < lowest)
+            /// Here we are addressing the issue of the "Ghost Index" which would create the invisible value of "0.0"
+            if (i == 0) {
+                lowest = inputTemp;
+                highest = inputTemp;
+            }
+
+            else if (tempData[i] < lowest)
                 lowest = tempData[i];
 
-            if (tempData[i] > highest)
+            else if (tempData[i] > highest)
                 highest = tempData[i];
 
         }
