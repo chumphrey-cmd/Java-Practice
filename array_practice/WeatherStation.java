@@ -18,12 +18,21 @@ public class WeatherStation {
         double [] tempData = new double[daysOfData];
         int length = tempData.length;
 
+        double lowest = tempData[0];
+        double highest = tempData[0];
+
         for (int i = 0; i < length; i ++){
             System.out.println("Enter the temperature for day " + (i+1) + " :");
             double inputTemp = obj.nextDouble();
             obj.nextLine();
 
             tempData[i] = inputTemp;
+
+            if (tempData[i] < lowest)
+                lowest = tempData[i];
+
+            if (tempData[i] > highest)
+                highest = tempData[i];
 
         }
         // Array to String sanity check
@@ -35,9 +44,13 @@ public class WeatherStation {
             sum += tempPrint;
         }
 
+        // Average Temperature
         average = sum/length;
         System.out.println("Average Temperature: " + average);
 
+        // Highest and Lowest Temperatures
+        System.out.println("Highest Temp: " + highest);
+        System.out.println("Lowest Temp: " + lowest);
     }
 
 }
